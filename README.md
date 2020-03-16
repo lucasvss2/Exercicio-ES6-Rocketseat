@@ -182,7 +182,8 @@ const usuario = {
 ## Exercícios: Módulo 02
 Todos os exercícios abaixo necessitam que você esteja com o Webpack configurado.
 **1) Crie um arquivo chamado functions.js com o seguinte conteúdo:**
-```export const idade = 23;
+```javascript
+export const idade = 23;
 export default class Usuario {
 static info() {
 console.log('Apenas teste');
@@ -206,7 +207,7 @@ babel-polyfill devidamente configurados. Em alguns exercícios é necessário in
 
 **1)Transforme os seguintes trechos de código utilizando async/await:**
 
-```
+```javascript
 // Funão delay aciona o .then após 1s
 const delay = () => new Promise(resolve => setTimeout(resolve, 1000));
 function umPorSegundo() {
@@ -222,7 +223,7 @@ console.log('3s');
 }
 umPorSegundo();
 ```
-```
+```javascript
 import axios from 'axios';
 function getUserFromGithub(user) {
 axios.get(`https://api.github.com/users/${user}`)
@@ -236,7 +237,7 @@ console.log('Usuário não existe');
 getUserFromGithub('diego3g');
 getUserFromGithub('diego3g124123');
 ```
-```
+```javascript
 class Github {
 static getRepositories(repo) {
 axios.get(`https://api.github.com/repos/${repo}`)
@@ -251,7 +252,7 @@ console.log('Repositório não existe');
 Github.getRepositories('rocketseat/rocketseat.com.br');
 Github.getRepositories('rocketseat/dslkvmskv');
 ```
-```
+```javascript
 const buscaUsuario = usuario => {
 axios.get(`https://api.github.com/users/${user}`)
 .then(response => {
