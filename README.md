@@ -25,9 +25,9 @@ console.log(Adm1.isAdmin()) // true
 **2) A partir do seguinte vetor e utilizando os métodos de array (map, reduce, filter e find):**
 ```javascript
 const usuarios = [
- { nome: 'Diego', idade: 23, empresa: 'Rocketseat' },
- { nome: 'Gabriel', idade: 15, empresa: 'Rocketseat' },
- { nome: 'Lucas', idade: 30, empresa: 'Facebook' },
+  { nome: 'Diego', idade: 23, empresa: 'Rocketseat' },
+  { nome: 'Gabriel', idade: 15, empresa: 'Rocketseat' },
+  { nome: 'Lucas', idade: 30, empresa: 'Facebook' },
 ];
 ```
 **2.1) Utilizando o ```map```**  
@@ -51,8 +51,8 @@ no máximo 50 anos:
 ```javascript
 // Resultado:
 [
- { nome: 'Diego', idade: 46, empresa: 'Rocketseat' },
- { nome: 'Gabriel', idade: 30, empresa: 'Rocketseat' },
+  { nome: 'Diego', idade: 46, empresa: 'Rocketseat' },
+  { nome: 'Gabriel', idade: 30, empresa: 'Rocketseat' },
 ]
 ```
 
@@ -61,7 +61,7 @@ no máximo 50 anos:
 // 3.1
 const arr = [1, 2, 3, 4, 5];
 arr.map(function(item) {
- return item + 10;
+  return item + 10;
 });
 ```
 ```javascript
@@ -69,7 +69,7 @@ arr.map(function(item) {
 // Dica: Utilize uma constante pra function
 const usuario = { nome: 'Diego', idade: 23 };
 function mostraIdade(usuario) {
- return usuario.idade;
+  return usuario.idade;
 }
 mostraIdade(usuario);
 ```
@@ -79,17 +79,17 @@ mostraIdade(usuario);
 const nome = "Diego";
 const idade = 23;
 function mostraUsuario(nome = 'Diego', idade = 18) {
- return { nome, idade };
+  return { nome, idade };
 }
 mostraUsuario(nome, idade);
 mostraUsuario(nome);
 ```
 ```javascript
 // 3.4
-const promise = function() {
- return new Promise(function(resolve, reject) {
- return resolve();
- })
+const promise = function () {
+  return new Promise(function (resolve, reject) {
+    return resolve();
+  })
 }
 ```
 **4) Exercícios de Desestruturação**  
@@ -99,11 +99,11 @@ const promise = function() {
 A partir do seguinte objeto:
 ```javascript
 const empresa = {
- nome: 'Rocketseat',
- endereco: {
- cidade: 'Rio do Sul',
- estado: 'SC',
- }
+  nome: 'Rocketseat',
+  endereco: {
+    cidade: 'Rio do Sul',
+    estado: 'SC',
+  }
 };
 ```
 Utilize a desestruturação para transformar as propriedades nome, cidade e estado em variáveis, no
@@ -119,7 +119,7 @@ console.log(estado); // SC
 Na seguinte função:
 ```javascript
 function mostraInfo(usuario) {
- return `${usuario.nome} tem ${usuario.idade} anos.`;
+  return `${usuario.nome} tem ${usuario.idade} anos.`;
 }
 mostraInfo({ nome: 'Diego', idade: 23 })
 ```
@@ -150,13 +150,13 @@ A partir do objeto e utilizando o operador spread:
 
 ```javascript
 const usuario = {
- nome: 'Diego',
- idade: 23,
- endereco: {
- cidade: 'Rio do Sul',
- uf: 'SC',
- pais: 'Brasil',
- }
+  nome: 'Diego',
+  idade: 23,
+  endereco: {
+    cidade: 'Rio do Sul',
+    uf: 'SC',
+    pais: 'Brasil',
+  }
 };
 ```
 Crie uma variável ```usuario2``` que contenha todos os dados do usuário porém com nome ```Gabriel.```  
@@ -174,9 +174,9 @@ console.log('O usuário ' + usuario + ' possui ' + idade + ' anos');
 const nome = 'Diego';
 const idade = 23;
 const usuario = {
- nome: nome,
- idade: idade,
- cidade: 'Rio do Sul',
+  nome: nome,
+  idade: idade,
+  cidade: 'Rio do Sul',
 };
 ```
 ## Exercícios: Módulo 02
@@ -184,10 +184,11 @@ Todos os exercícios abaixo necessitam que você esteja com o Webpack configurad
 **1) Crie um arquivo chamado functions.js com o seguinte conteúdo:**
 ```javascript
 export const idade = 23;
+
 export default class Usuario {
-static info() {
-console.log('Apenas teste');
-}
+  static info() {
+    console.log('Apenas teste');
+  }
 }
 ```
 **1.1**
@@ -211,56 +212,56 @@ babel-polyfill devidamente configurados. Em alguns exercícios é necessário in
 // Funão delay aciona o .then após 1s
 const delay = () => new Promise(resolve => setTimeout(resolve, 1000));
 function umPorSegundo() {
-delay().then(() => {
-console.log('1s');
-delay().then(() => {
-console.log('2s');
-delay().then(() => {
-console.log('3s');
-});
-})
-});
+  delay().then(() => {
+    console.log('1s');
+    delay().then(() => {
+      console.log('2s');
+      delay().then(() => {
+        console.log('3s');
+      });
+    })
+  });
 }
 umPorSegundo();
 ```
 ```javascript
 import axios from 'axios';
 function getUserFromGithub(user) {
-axios.get(`https://api.github.com/users/${user}`)
-.then(response => {
-console.log(response.data);
-})
-.catch(err => {
-console.log('Usuário não existe');
-})
+  axios.get(`https://api.github.com/users/${user}`)
+    .then(response => {
+      console.log(response.data);
+    })
+    .catch(err => {
+      console.log('Usuário não existe');
+    })
 }
 getUserFromGithub('diego3g');
 getUserFromGithub('diego3g124123');
 ```
 ```javascript
 class Github {
-static getRepositories(repo) {
-axios.get(`https://api.github.com/repos/${repo}`)
-.then(response => {
-console.log(response.data);
-})
-.catch(err => {
-console.log('Repositório não existe');
-})
-}
+  static getRepositories(repo) {
+    axios.get(`https://api.github.com/repos/${repo}`)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(err => {
+        console.log('Repositório não existe');
+      })
+  }
 }
 Github.getRepositories('rocketseat/rocketseat.com.br');
 Github.getRepositories('rocketseat/dslkvmskv');
 ```
 ```javascript
 const buscaUsuario = usuario => {
-axios.get(`https://api.github.com/users/${user}`)
-.then(response => {
-console.log(response.data);
-})
-.catch(err => {
-console.log('Usuário não existe');
-});
+  axios.get(`https://api.github.com/users/${user}`)
+    .then(response => {
+      console.log(response.data);
+    })
+    .catch(err => {
+      console.log('Usuário não existe');
+    });
 }
 buscaUsuario('diego3g');
 ```
