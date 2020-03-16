@@ -203,8 +203,9 @@ para ```IdadeUsuario```.
 # Exercícios: Módulo 03
 Todos os exercícios abaixo necessitam que você esteja com o plugin do Async/Await do Babel e o
 babel-polyfill devidamente configurados. Em alguns exercícios é necessário instalar o Axios.
-**1)**
-Transforme os seguintes trechos de código utilizando async/await:
+
+**1)Transforme os seguintes trechos de código utilizando async/await:**
+
 ```
 // Funão delay aciona o .then após 1s
 const delay = () => new Promise(resolve => setTimeout(resolve, 1000));
